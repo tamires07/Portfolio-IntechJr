@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    
+    <title>Meu Primeiro Portfolio Web</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0;
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #ead2f1, #ffffff);
+        }
+        header{
+            padding: 15px;
+            margin-bottom: 15px;
+            background: linear-gradient(180deg, #3d003d, #8a007f);
+            box-shadow: 0 2px 15px #6A006A;
+        }
+        .container-titulo{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        #toggle-dark{
+            margin-left: auto;
+        }
+        .titulo{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            background: linear-gradient(to bottom, #ddb1eb, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Quicksand", sans-serif;
+        }
+        .dropdown-item{
+            text-align: center;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #ddb1eb, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Quicksand", sans-serif;
+        }
+        .navbar .nav-link{
+            font-weight: bold;
+            background: linear-gradient(to bottom, #ddb1eb, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dropdown-menu {
+            background: linear-gradient(180deg, #a32795, #ec44d9);
+            border-radius: 10px;
+        }
+        .nav-link:hover, .dropdown-item:hover{
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+        main{
+            text-align: center;
+            padding: 40px;
+            padding-top: 20px;
+        }
+        .subtitulo, h3{
+            font-weight: bold;
+            background: linear-gradient(to bottom, #1e001e, #b604a1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Quicksand", sans-serif;
+        }
+        p{
+            color: #2c012c;
+            font-family: "Quicksand", sans-serif;
+            font-weight: 575;
+            font-size: 17px;
+        }
+        .conteudo{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-align: left;
+            margin-top: 50px;
+            column-gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .conteudo {
+                grid-template-columns: 1fr;
+                row-gap: 20px;
+            }
+        }
+        .informacoes, .projetos{
+            border-radius: 10px;
+            box-shadow: 0 2px 20px #f6edf8;
+            padding: 20px;
+        }
+        .tabela-habilidades{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: linear-gradient(to bottom, #ead2f1, #ffffff);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        .tabela-habilidades th{
+            background: linear-gradient(180deg, #3d003d, #8a007f);
+            font-weight: bold;
+            color: #f3e9f6;
+            font-family: "Quicksand", sans-serif;
+            padding: 12px;
+            text-align: left;
+        }
+        .tabela-habilidades td{
+            color: #2c012c;
+            font-family: "Quicksand", sans-serif;
+            font-weight: 575;
+            font-size: 15px;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        .tabela-habilidades tr:hover{
+            background: #eed3eb;
+        }
+        .titulo-projeto{
+            text-align: center;
+        }
+        img{
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+        img:hover{
+            transform: scale(1.03);
+        }
+        .aristopet, .loki, .flappybird{
+            font-weight: bold;
+            background: linear-gradient(to bottom, #1e001e, #b604a1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 19px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        footer{
+            margin-top: 60px;
+            background: linear-gradient(180deg, #8a007f, #3d003d);
+            box-shadow: 0 2px 15px #6A006A;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .footer-agradecimento{
+            font-weight: bold;
+            font-size: 1.5rem;
+            background: linear-gradient(to bottom, #ddb1eb, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Quicksand", sans-serif;
+            margin-bottom: 10px;
+        }
+        .footer-date{
+            font-size: 1rem;
+            color: #f3d9f7;
+        }
+        
+        .dark-mode{
+            background: linear-gradient(to bottom, #1a001a, #000000);
+        }
+        .dark-mode header{
+            background: linear-gradient(180deg, #290029, #670167);
+            box-shadow: 0 2px 15px #6c177f;
+        }
+        .dark-mode .dropdown-menu{
+            background: linear-gradient(180deg, #670167, #290029);
+        }
+        .dark-mode h3, .dark-mode .subtitulo{
+            background: linear-gradient(to bottom, #dc6ffd, #e6baf1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark-mode p{
+            color: #f5f1f7;
+        }
+        .dark-mode .projetos, .dark-mode .informacoes{
+            box-shadow: 0 2px 20px #490a57;
+        }
+        .dark-mode .tabela-habilidades{
+            background: linear-gradient(to bottom, #5c015c, #9a3a9a);
+            color: #f3e9f6;
+            border: 1px solid #640b64;
+        }
+        .dark-mode .tabela-habilidades th{
+            background: linear-gradient(180deg, #0d000d, #460446);
+            color: #f3e9f6;
+            border-bottom: 1px solid #640b64;
+        }
+        .dark-mode .tabela-habilidades td{
+            color: #f3e9f6;
+            border-bottom: 1px solid #640b64;
+        }
+        .dark-mode .tabela-habilidades tr:hover{
+            background: #7d4076;
+        }
+        .dark-mode .aristopet, .dark-mode .loki, .dark-mode .flappybird{
+            background: linear-gradient(to bottom, #dc6ffd, #e6baf1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark-mode footer{
+            background: linear-gradient(180deg, #670167, #290029);
+            box-shadow: 0 2px 15px #6c177f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-titulo">
+            <h1 class="titulo">Tamires Martins de Melo</h1>
+            <button id="toggle-dark" class="btn">🌙</button>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre-mim">Sobre mim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#habilidades">Habilidades</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Contato
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="https://mail.google.com/mail/?view=cm&to=tmelo7445@gmail.com" target="_blank">Email</a></li>
+                                <li><a class="dropdown-item" href="https://wa.me/5535991414484?" target="_blank">WhatsApp</a></li>
+                                <li><a class="dropdown-item" href="https://www.linkedin.com/in/tamires-martins-de-melo/" target="_blank">LinkedIn</a></li>
+                                <li><a class="dropdown-item" href="https://github.com/tamires07" target="_blank">GitHub</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h2 class="subtitulo">Bem-vindo(a)!</h2>
+        <p class="introducao">
+            Esta página foi desenvolvida como parte do meu primeiro portfólio web, 
+            com o objetivo de apresentar a organização, estruturação e interação de conteúdos em um ambiente digital, 
+            reunindo seções que incluem uma breve apresentação sobre mim, minhas principais habilidades, 
+            além de um espaço dedicado à exposição de projetos desenvolvidos. 
+            Também conta com uma área destinada aos meus meios de contato, organizada de forma clara e acessível.
+        </p>
+        <div class="conteudo">
+                <div class="informacoes">
+                    <h3 id="sobre-mim" class="topico1">• Sobre mim</h3>
+                    <section class="secao">
+                        <p class="texto-sobre" style="text-align: justify;">
+                            Meu nome é Tamires Martins de Melo, tenho 19 anos e atualmente curso Bacharelado em Ciência da Computação no IF Sul de Minas – Campus Muzambinho. 
+                            Tenho interesse na área de desenvolvimento e vejo na Intech Jr uma oportunidade de colocar em prática os conhecimentos que venho adquirindo ao longo da minha formação, 
+                            além de continuar aprendendo e evoluindo dentro de um ambiente colaborativo.<br><br>
+                            Ao ingressar em uma empresa júnior, busco não apenas desenvolver minhas habilidades técnicas, 
+                            mas também crescer em aspectos importantes para a área de tecnologia, como:<br><br>
+
+                            • Trabalho em equipe<br>
+                            • Organização e responsabilidade com prazos<br>
+                            • Contato com demandas reais e resolução de problemas<br><br>
+
+                            Acredito que essa experiência será extremamente enriquecedora, pois proporciona um contato mais próximo com o mercado de trabalho, 
+                            permitindo entender na prática como funcionam projetos, clientes e entregas dentro da área de desenvolvimento.<br><br>
+
+                            Tenho como objetivo me dedicar ao máximo, buscando sempre aprender mais, 
+                            evoluir continuamente e contribuir de forma positiva com a equipe. 
+                            Espero poder crescer junto com a empresa, adquirindo experiência e desenvolvendo 
+                            competências que serão essenciais para minha trajetória profissional.
+                        </p>
+                    </section>
+                    
+                    <h3 id="habilidades" class="topico2" style="margin-top: 75px;">• Minhas habilidades</h3>
+                    <section class="secao">
+                        <p style="text-align: justify;">
+                            A seguir, apresento algumas das principais habilidades que venho desenvolvendo ao longo da minha formação e por meio de projetos práticos, 
+                            envolvendo tanto conhecimentos técnicos quanto competências importantes para atuação em equipe e no desenvolvimento de soluções na área de tecnologia.
+                        </p>
+                        <table class="tabela-habilidades">
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Habilidades</th>
+                            </tr>
+                            <tr>
+                                <td>Desenvolvimento Web</td>
+                                <td>HTML, CSS, JavaScript, Django, Bootstrap</td>
+                            </tr>
+                            <tr>
+                                <td>Linguagens de Programação</td>
+                                <td>Python, C/C++</td>
+                            </tr>
+                            <tr>
+                                <td>Banco de Dados</td>
+                                <td>MySQL, PostgreSQL</td>
+                            </tr>
+                            <tr>
+                                <td>Desenvolvimento de Jogos</td>
+                                <td>Pygame</td>
+                            </tr>
+                            <tr>
+                                <td>Soft Skills</td>
+                                <td>Trabalho em equipe, Respeito, Empatia, Comunicação, Organização</td>
+                            </tr>
+                        </table>
+                    </section>
+                </div>
+                <div class="projetos">
+                    <h3 class="titulo-projeto">Projetos desenvolvidos</h3>
+                    <p id="AristoPet" class="aristopet">• AristoPet:</p>
+                    <p>Aplicação Web destinada à adoção responsável de animais em situação de vulnerabilidade.</p>
+                    <img src="img-AristoPet.png" alt="p1" width="100%">
+
+                    <p id="FlappyBird" class="flappybird">• FlappyBird</p>
+                    <p>Desenvolvimento de uma versão do jogo Flappy Bird com o objetivo de aprimorar conhecimentos na biblioteca Pygame.</p>
+                    <img src="img-FlappyBird.png" alt="p2" width="100%">
+
+                    <p id="Loki" class="loki">• Loki: A jornada pelo Tesseract</p>
+                    <p>Desenvolvimento de um jogo 2D de entretenimento inspirado no personagem Loki, com o objetivo de aprimorar conhecimentos na biblioteca Pygame.</p>
+                    <img src="img-Loki.png" alt="p4" width="100%">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p class="footer-agradecimento">Muito Obrigada!</p>  
+            <p class="footer-date">03/05/2026</p>
+        </div>
+
+    </footer>
+    <script>
+        const botao = document.getElementById("toggle-dark");
+
+        botao.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+
+            if(document.body.classList.contains("dark-mode")){
+                botao.textContent = "☀️";
+            }
+            else{
+                botao.textContent = "🌙";
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
