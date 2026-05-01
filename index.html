@@ -60,14 +60,6 @@
                 gap: 10px;
             }
         }
-        .dropdown-item{
-            text-align: center;
-            font-weight: bold;
-            background: linear-gradient(to bottom, #ddb1eb, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: "Quicksand", sans-serif;
-        }
         .navbar .nav-link{
             font-weight: bold;
             background: linear-gradient(to bottom, #ddb1eb, #ffffff);
@@ -81,6 +73,22 @@
         .nav-link:hover, .dropdown-item:hover{
             opacity: 0.7;
             transition: 0.3s;
+        }
+        .dropdown-item{
+            text-align: center;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #ddb1eb, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Quicksand", sans-serif;
+        }
+        .so-mobile {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .so-mobile {
+                display: block;
+            }
         }
         main{
             text-align: center;
@@ -113,7 +121,7 @@
                 row-gap: 20px;
             }
         }
-        .informacoes, .projetos{
+        .informacoes, .Projetos{
             border-radius: 10px;
             box-shadow: 0 2px 20px #f6edf8;
             padding: 20px;
@@ -255,6 +263,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#habilidades">Habilidades</a>
                         </li>
+                        <li class="nav-item so-mobile">
+                            <a class="nav-link" href="#projetos">Projetos</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Contato
@@ -339,19 +350,25 @@
                         </table>
                     </section>
                 </div>
-                <div class="projetos">
+                <div id="projetos" class="Projetos">
                     <h3 class="titulo-projeto">Projetos desenvolvidos</h3>
                     <p id="AristoPet" class="aristopet">• AristoPet:</p>
                     <p>Aplicação Web destinada à adoção responsável de animais em situação de vulnerabilidade.</p>
-                    <img src="img-AristoPet.png" alt="p1" width="100%">
+                    <a href="https://github.com/tamires07/AristoPet-INFO-G" target="_blank">
+                        <img src="img-AristoPet.png" alt="p1" width="100%">
+                    </a>
 
                     <p id="FlappyBird" class="flappybird">• FlappyBird</p>
                     <p>Desenvolvimento de uma versão do jogo Flappy Bird com o objetivo de aprimorar conhecimentos na biblioteca Pygame.</p>
-                    <img src="img-FlappyBird.png" alt="p2" width="100%">
+                    <a href="https://github.com/tamires07/FlappyBird" target="_blank">
+                        <img src="img-FlappyBird.png" alt="p2" width="100%">
+                    </a>
 
                     <p id="Loki" class="loki">• Loki: A jornada pelo Tesseract</p>
                     <p>Desenvolvimento de um jogo 2D de entretenimento inspirado no personagem Loki, com o objetivo de aprimorar conhecimentos na biblioteca Pygame.</p>
-                    <img src="img-Loki.png" alt="p4" width="100%">
+                    <a href="https://github.com/tamires07/Loki-A_jornada_pelo_Tesseract" target="_blank">
+                        <img src="img-Loki.png" alt="p4" width="100%">
+                    </a>
                 </div>
             </div>
         </div>
